@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+    <script>
+        let currentSection = "main";
+        function showSection(section) {
+            if (section !== currentSection) {
+                document.getElementById(currentSection).classList.remove("active");
+                document.getElementById(section).classList.add("active");
+                currentSection = section;
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("resumeUpload").addEventListener("change", function() {
+                alert("Resume uploaded: " + this.files[0].name);
+            });
+        });
+    </script>   
+</head>
+<body>
+    <div class="matrix-code">101010101010101010101010101010</div>
+    
+    <div class="navbar">
+        <a href="#" onclick="showSection('main')">Home</a>
+        <a href="#" onclick="showSection('about')">About Me</a>
+        <a href="#" onclick="showSection('skills')">Skills</a>
+        <a href="#" onclick="showSection('certifications')">Certifications</a>
+        <a href="#" onclick="showSection('social')">Social Media</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('resume')">Resume</a>
+        <a href="#" onclick="showSection('feedback')">Feedback</a>
+    </div>
+    
+    <div class="container">
+        <div id="main" class="content active">
+            <div class="name"><b>Mahendran Varudharajan</b></div>
+            <div class="bio">Aspiring Cybersecurity Researcher & Enthusiast | Beginner in Ethical Hacking | Linux | Networking | Coder | Beginner in Web Technology | Problem Solving | Java | SQL</div>
+        </div>
+        <div id="about" class="content">
+            <h2>About Me</h2>
+            <p>➡️ I am a 2nd-year B.Tech IT student at Muthayammal Engineering College, passionate about cybersecurity and ethical hacking.</p>
+            <p>➡️ I am constantly exploring Linux, networking, and penetration testing.</p>
+            <p>➡️ Strong foundation in problem-solving, C, SQL, Java, and web technologies.</p>
+            <p>➡️ Passionate about developing secure applications, ensuring privacy, and contributing to the security community.</p>
+        </div>
+        <div id="skills" class="content">
+            <h2>Skills & Interests</h2>
+            <p>➡️ Ethical Hacking</p>
+            <p>➡️ Networking</p>
+            <p>➡️ Linux</p>
+            <p>➡️ Java</p>
+            <p>➡️ C</p>
+        </div>
+        <div id="certifications" class="content">
+            <h2>Certifications</h2>
+            <p>➡️ CISCO</p>
+            <p>➡️ ISC2</p>
+            <p>➡️ TryHackMe</p>
+        </div>
+        <div id="social" class="content">
+            <h2>Social Media</h2>
+            <p>➡️ <a href="https://github.com/Mahendranv2005">GitHub</a></p>
+            <p>➡️ <a href="https://www.linkedin.com/in/mahendran-v-1ab6102a5">LinkedIn</a></p>
+            <p>➡️ <a href="https://medium.com/@mahendranvarudharajan">Medium</a></p>
+        </div>
+        <div id="contact" class="content">
+            <h2>Contact</h2>
+            <p>➡️ Email: mahendranvarudharajan@gmail.com</p>
+            <p>➡️ Contact: +91 6380179568</p>
+        </div>
+        <div id="resume" class="content">
+            <h2>Resume</h2>
+            <label for="resumeUpload" class="resume-btn">Upload Resume</label>
+            <input type="file" id="resumeUpload" accept=".pdf,.doc,.docx" style="display: none;">
+            <a id="resumeDownload" href="your_resume.pdf" download class="resume-btn">Download Resume</a>
+        </div>
+        <div id="feedback" class="content">
+            <h2>Feedback</h2>
+            <form>
+                <label>Name:</label>
+                <input type="text" placeholder="Enter your name" required><br><br>
+
+                <label>Contact Number:</label>
+                <input type="text" placeholder="Enter your contact number" required><br><br>
+
+                <label>Email:</label>
+                <input type="email" placeholder="Enter your email" required><br><br>
+
+                <label>LinkedIn URL:</label>
+                <input type="url" placeholder="Enter LinkedIn profile URL"><br><br>
+
+                <label>GitHub URL:</label>
+                <input type="url" placeholder="Enter GitHub profile URL"><br><br>
+
+                <button type="submit" class="resume-btn">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
